@@ -6,3 +6,6 @@
 文件内容规范来自：http://www.bittorrent.org/beps/bep_0003.html
 
 实例代码在example.py中
+
+
+(以后可能更新js和php版，看我啥时候不懒了再加)
