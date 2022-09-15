@@ -1,5 +1,5 @@
 class torrent_reader:
-    # 读取 强制byte类型
+    # 读取bytes
     #   hash_type(hash返回格式)(其实遇上所有decode失败的bytes都会判断是否转换)
     #       hex 十六进制字符串(默认)
     #       byte byte型
@@ -9,6 +9,11 @@ class torrent_reader:
         self.torrent_content = torrent_content
         self.hash_type = hash_type
         return self.type_select()
+
+    # 读取torrent文件
+    def read_file(self, file_path, hash_type="hex"):
+        with open(file_path, 'rb') as torrent_file:
+            return self.read(torrent_file.read(), hash_type=hash_type)
 
     # 格式判断并获取值
     def type_select(self):
